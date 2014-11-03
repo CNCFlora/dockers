@@ -2,7 +2,9 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get upgrade -y 
 
-RUN apt-get install supervisor couchdb wget -y
+RUN apt-get install supervisor couchdb wget ruby -y
+
+RUN gem sources -r http://rubygems.org/ && gem sources -a https://rubygems.org/ && gem install small-ops -v 0.0.34
 
 RUN mkdir /var/log/supervisord
 ADD supervisord.conf /etc/supervisor/conf.d/couchdb.conf
