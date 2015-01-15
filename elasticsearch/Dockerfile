@@ -9,7 +9,6 @@ VOLUME ["/usr/share/elasticsearch/data"]
 
 EXPOSE 9200
 EXPOSE 9300
-EXPOSE 9001
 
 CMD [ "supervisord" ]
 
