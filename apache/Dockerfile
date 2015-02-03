@@ -25,8 +25,5 @@ VOLUME ["/var/www"]
 
 EXPOSE 80
 
-ADD start.sh /root/start.sh
-RUN chmod +x /root/start.sh
-
-CMD ["/root/start.sh"]
+CMD ["/usr/sbin/apache2","-D","FOREGROUND"]
 
