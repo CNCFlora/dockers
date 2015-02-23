@@ -13,7 +13,7 @@ EXPOSE 5984
 
 CMD [ "supervisord" ]
 
-RUN gem install couchdb-extras -v 0.0.2
+RUN gem install couchdb-extras -v 0.0.4
 
 ADD bots.conf /etc/supervisor/conf.d/bots.conf
 
