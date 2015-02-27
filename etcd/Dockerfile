@@ -1,10 +1,19 @@
-FROM ubuntu:14.04
-RUN apt-get update -q
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy build-essential curl git
-RUN curl -s https://storage.googleapis.com/golang/go1.3.src.tar.gz | tar -v -C /usr/local -xz
-RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
-ENV PATH /usr/local/go/bin:$PATH
-RUN cd /opt && git clone https://github.com/coreos/etcd.git 
-RUN cd /opt/etcd && git checkout v0.4.6  && ./build
+FROM debian:wheezy
+
+RUN sed -i -e 's/http.debian.net/ftp.us.debian.org/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -qy curl && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN cd /opt && \
+    curl -L  https://github.com/coreos/etcd/releases/download/v2.0.2/etcd-v2.0.2-linux-amd64.tar.gz -o etcd-v2.0.2-linux-amd64.tar.gz && \
+    tar xzvf etcd-v2.0.2-linux-amd64.tar.gz && \
+    mv etcd-v2.0.2-linux-amd64 etcd && \
+    rm etcd-v2.0.2-linux-amd64.tar.gz
+
 EXPOSE 4001 7001
-ENTRYPOINT ["/opt/etcd/bin/etcd"]
+
+WORKDIR /opt/etcd
+
+CMD ["/opt/etcd/etcd","--cors","*","--listen-client-urls","http://0.0.0.0:4001,http://0.0.0.0:2379","--listen-peer-urls","http://0.0.0.0:2380,http://0.0.0.0:7001"]
