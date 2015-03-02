@@ -1,8 +1,10 @@
-FROM ubuntu:14.04
+FROM debian:wheezy
 
-RUN apt-get update && \
+RUN sed -i -e 's/http.debian.net/ftp.us.debian.org/g' /etc/apt/sources.list && \
+    apt-get update && \
     apt-get upgrade -y && \
-    apt-get install apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-common php5-sqlite php5-mysql php5-pgsql php5-gd -y 
+    apt-get install apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-common php5-sqlite php5-mysql php5-pgsql php5-gd -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite 
 
