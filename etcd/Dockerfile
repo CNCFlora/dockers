@@ -7,10 +7,10 @@ RUN sed -i -e 's/http.debian.net/ftp.us.debian.org/g' /etc/apt/sources.list && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt && \
-    curl -L  https://github.com/coreos/etcd/releases/download/v2.0.2/etcd-v2.0.2-linux-amd64.tar.gz -o etcd-v2.0.2-linux-amd64.tar.gz && \
-    tar xzvf etcd-v2.0.2-linux-amd64.tar.gz && \
-    mv etcd-v2.0.2-linux-amd64 etcd && \
-    rm etcd-v2.0.2-linux-amd64.tar.gz
+    curl -L  https://github.com/coreos/etcd/releases/download/v2.0.5/etcd-v2.0.5-linux-amd64.tar.gz -o etcd-v2.0.5-linux-amd64.tar.gz && \
+    tar xzvf etcd-v2.0.5-linux-amd64.tar.gz && \
+    mv etcd-v2.0.5-linux-amd64 etcd && \
+    rm etcd-v2.0.5-linux-amd64.tar.gz
 
 EXPOSE 4001 7001
 
