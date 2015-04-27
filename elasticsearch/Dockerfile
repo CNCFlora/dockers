@@ -12,5 +12,5 @@ VOLUME ["/usr/share/elasticsearch/data"]
 EXPOSE 9200
 EXPOSE 9300
 
-CMD ["/usr/share/elasticsearch/bin/elasticsearch","--cluster.name","docker_es"]
+CMD ["/usr/share/elasticsearch/bin/elasticsearch","--cluster.name","docker_es","--index.mapping.ignore_malformed","true"]
 
