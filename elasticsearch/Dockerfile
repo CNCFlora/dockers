@@ -7,10 +7,14 @@ RUN apt-get update && apt-get install adduser && \
     dpkg -i /root/elasticsearch-1.4.4.deb && rm /root/elasticsearch-1.4.4.deb && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN mkdir /usr/share/elasticsearch/config && cp /etc/elasticsearch/* /usr/share/elasticsearch/config
+
+WORKDIR /usr/share/elasticsearch
+
 VOLUME ["/usr/share/elasticsearch/data"]
 
 EXPOSE 9200
 EXPOSE 9300
 
-CMD ["/usr/share/elasticsearch/bin/elasticsearch","--cluster.name","docker_es","--index.mapping.ignore_malformed","true"]
+CMD ["bin/elasticsearch","--cluster.name","docker_es","--index.mapping.ignore_malformed","true"]
 
