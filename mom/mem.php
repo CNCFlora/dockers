@@ -15,7 +15,7 @@ function getSystemMemInfo()
 
 $mem = getSystemMemInfo();
 $free = (( $mem['MemFree'] + $mem['Cached']  )* 100) / $mem['MemTotal']  ;
-if ($free < 20) {
+if ($free < 10) {
   header('HTTP/1.1 503 Too busy, try again later');
   die('Server too busy. Please try again later.');
 }
