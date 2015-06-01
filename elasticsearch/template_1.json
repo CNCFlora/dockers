@@ -1,0 +1,1653 @@
+{
+    "template_1": {
+        "mappings": {
+            "assessment": {
+                "properties": {
+                    "assessor": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "category": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "criteria": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "dateOfAssessment": {
+                        "type": "long"
+                    },
+                    "dateOfAssessmentTimestamp": {
+                        "format": "dateOptionalTime",
+                        "store": true,
+                        "type": "date"
+                    },
+                    "evaluator": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "id": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "information": {
+                        "properties": {
+                            "currentPopulationTrend": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "dateLastSeen": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "numberOfLocations": {
+                                "type": "long"
+                            },
+                            "numberOfMatureIndividuals": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "populationDeclineFuture": {
+                                "type": "long"
+                            },
+                            "populationDeclinePast": {
+                                "type": "long"
+                            },
+                            "possiblyExtinct": {
+                                "type": "boolean"
+                            },
+                            "severelyFragmented": {
+                                "type": "string",
+                                "index": "not_analyzed"
+                            },
+                            "timePeriodOfFutureDecline": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "timePeriodOfPastDecline": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            }
+                        }
+                    },
+                    "metadata": {
+                        "properties": {
+                            "contributor": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "long"
+                            },
+                            "creator": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "createdTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "description": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "identifier": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "language": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "modified": {
+                                "type": "long"
+                            },
+                            "modifiedTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "source": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "status": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "title": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "type": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "valid": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "notes": {
+                        "type": "string",
+                        "analyzer": "general_analyzer"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "rationale": {
+                        "analyzer": "general_analyzer",
+                        "type": "string"
+                    },
+                    "reasonsForChange": {
+                        "properties": {
+                            "reason": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "resume": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            }
+                        }
+                    },
+                    "reasonsForReAssessment": {
+                        "properties": {
+                            "change": {
+                                "type": "boolean"
+                            },
+                            "reason": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "resume": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            }
+                        }
+                    },
+                    "references": {
+                        "analyzer": "general_analyzer",
+                        "type": "string"
+                    },
+                    "rev": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "review": {
+                        "properties": {
+                            "comment": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "rationale": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "status": {
+                                "type": "string",
+                                "index": "not_analyzed"
+                            }
+                        }
+                    },
+                    "status": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxon": {
+                        "properties": {
+                            "family": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "lsid": {
+                                "type": "string",
+                                "index": "not_analyzed"
+                            },
+                            "scientificName": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "scientificNameAuthorship": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "scientificNameWithoutAuthorship": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "transform": [
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('dateOfAssessment') && ctx._source['dateOfAssessment'] != ''){ ctx._source['dateOfAssessmentTimestamp'] = ctx._source['dateOfAssessment'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('created') && ctx._source['metadata']['created'] != '') { ctx._source['metadata']['createdTimestamp'] = ctx._source['metadata']['created'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('modified') && ctx._source['metadata']['modified'] != ''){ ctx._source['metadata']['modifiedTimestamp'] = ctx._source['metadata']['modified'].toLong() * 1000}"
+                    }
+                ]
+            },
+            "occurrence": {
+                "properties": {
+                    "acceptedNameUsage": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "acceptedNameUsageID": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "basisOfRecord": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "bibliographicCitation": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "catalogNumber": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "class": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "collectionCode": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "comments": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "coordinateUncertaintyInMeters": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "country": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "county": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "dateIdentified": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "dateLastModified": {
+                        "format": "dateOptionalTime",
+                        "type": "date"
+                    },
+                    "day": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "dayIdentified": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "decimalLatitude": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "decimalLatitude2": {
+                        "type": "double"
+                    },
+                    "decimalLongitude": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "family": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "fieldNumber": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "genus": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "georeferencePrecision": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "georeferenceProtocol": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "georeferenceRemarks": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "georeferenceVerificationStatus": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "georeferencedBy": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "georeferencedDate": {
+                        "format": "yyyy/MM/dd HH:mm:ss||yyyy/MM/dd",
+                        "type": "date"
+                    },
+                    "id": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "identificationDate": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "identificationQualifier": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "identifiedBy": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "individualCount": {
+                        "type": "string"
+                    },
+                    "infraspecificEpithet": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "institutionCode": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "kingdom": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "latlon": {
+                        "lat_lon": true,
+                        "normalize": false,
+                        "store": true,
+                        "type": "geo_point"
+                    },
+                    "locality": {
+                        "analyzer": "general_analyzer",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "properties": {
+                            "contact": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "contributor": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "long"
+                            },
+                            "createdTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "creator": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "modified": {
+                                "type": "long"
+                            },
+                            "modifiedTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "type": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "modified": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "month": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "monthIdentified": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "municipality": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "occurrenceID": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "occurrenceRemarks": {
+                        "analyzer": "general_analyzer",
+                        "type": "string"
+                    },
+                    "occurrenceStatus": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "phylum": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "recordNumber": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "recordedBy": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "remarks": {
+                        "analyzer": "general_analyzer",
+                        "type": "string"
+                    },
+                    "rev": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "scientificName": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "scientificNameAuthorship": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "sex": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "specificEpithet": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "stateProvince": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxonID": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxonOrder": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "typeStatus": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "validation": {
+                        "properties": {
+                            "by": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "cultivated": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "duplicated": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "georeference": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "native": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "presence": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "remarks": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "status": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "taxonomy": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "verbatimLatitude": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "verbatimLongitude": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "verbatimValidation": {
+                        "properties": {
+                            "by": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "remarks": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "status": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "year": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "yearIdentified": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    }
+                },
+                "transform": [
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('created') && ctx._source['metadata']['created'] != '') { ctx._source['metadata']['createdTimestamp'] = ctx._source['metadata']['created'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('modified') && ctx._source['metadata']['modified'] != ''){ ctx._source['metadata']['modifiedTimestamp'] = ctx._source['metadata']['modified'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "try { if (ctx._source.containsKey('decimalLatitude') && ctx._source.containsKey('decimalLongitude') && ctx._source['decimalLatitude'].toDouble() <= 90 && ctx._source['decimalLatitude'].toDouble() >= -90 && ctx._source['decimalLongitude'].toDouble() <= 180 && ctx._source['decimalLongitude'].toDouble() >= -180) { ctx._source['latlon'] = [ctx._source['decimalLongitude'].toDouble(), ctx._source['decimalLatitude'].toDouble()];}}catch (Exception e) {ctx._source['latlon'] = null;} "
+                    }
+                ]
+            },
+            "profile": {
+                "properties": {
+                    "actions": {
+                        "properties": {
+                            "action": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "details": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "situation": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "distribution": {
+                        "properties": {
+                            "altitude": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "aoo": {
+                                "type": "double"
+                            },
+                            "brasilianEndemic": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "eoo": {
+                                "type": "double"
+                            },
+                            "fragmented": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "resume": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "ecology": {
+                        "properties": {
+                            "biomas": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "clonal": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "fenology": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "fitofisionomies": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "habitats": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "lifeForm": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "longevity": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "luminosity": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "resprout": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "resume": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "substratum": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "vegetation": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "economicValue": {
+                        "properties": {
+                            "details": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "potentialEconomicValue": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "references": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            }
+                        }
+                    },
+                    "id": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "properties": {
+                            "contact": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "contributor": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "long"
+                            },
+                            "createdTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "creator": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string",
+                                "analyzer": "general_analyzer"
+                            },
+                            "identifier": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "language": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "modified": {
+                                "type": "long"
+                            },
+                            "modifiedTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "source": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "status": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "title": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "type": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "valid": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "population": {
+                        "properties": {
+                            "extremeFluctuation": {
+                                "properties": {
+                                    "extremeFluctuation": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "generationTiming": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "justification": {
+                                        "analyzer": "general_analyzer",
+                                        "type": "string"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "numberOfIndividualsInBiggestSubpopulation": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "numberOfSubpopulations": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "populationalReduction": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "resume": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "size": {
+                                "properties": {
+                                    "absolute": {
+                                        "type": "double"
+                                    },
+                                    "maximum": {
+                                        "type": "double"
+                                    },
+                                    "minimum": {
+                                        "type": "double"
+                                    },
+                                    "type": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "reproduction": {
+                        "properties": {
+                            "dispersionSyndrome": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "dispersorInformation": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "fenology": {
+                                "properties": {
+                                    "end": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    },
+                                    "fenology": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "pollinationSyndrome": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "pollinatorInformation": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "resume": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "sexualSystem": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "strategy": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "system": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "rev": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxon": {
+                        "properties": {
+                            "family": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "lsid": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "scientificName": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "scientificNameAuthorship": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "scientificNameWithoutAuthorship": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "taxonomicNotes": {
+                        "properties": {
+                            "notes": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "threats": {
+                        "properties": {
+                            "decline": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "details": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "ended": {
+                                "type": "boolean"
+                            },
+                            "incidence": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "reversible": {
+                                "type": "boolean"
+                            },
+                            "severity": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "stress": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "threat": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "timing": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "uses": {
+                        "properties": {
+                            "details": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "provenance": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "references": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "resource": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "use": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "validations": {
+                        "properties": {
+                            "comment": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "field": {
+                                "analyzer": "general_analyzer",
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "properties": {
+                                    "contact": {
+                                        "analyzer": "general_analyzer",
+                                        "fields": {
+                                            "untouched": {
+                                                "index": "not_analyzed",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "string"
+                                    },
+                                    "created": {
+                                        "type": "long"
+                                    },
+                                    "createdTimestamp": {
+                                        "format": "dateOptionalTime",
+                                        "store": true,
+                                        "type": "date"
+                                    },
+                                    "creator": {
+                                        "analyzer": "general_analyzer",
+                                        "fields": {
+                                            "untouched": {
+                                                "index": "not_analyzed",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "string"
+                                    },
+                                    "modified": {
+                                        "type": "long"
+                                    },
+                                    "modifiedTimestamp": {
+                                        "format": "dateOptionalTime",
+                                        "store": true,
+                                        "type": "date"
+                                    },
+                                    "status": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "transform": [
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('created') && ctx._source['metadata']['created'] != '') { ctx._source['metadata']['createdTimestamp'] = ctx._source['metadata']['created'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('modified') && ctx._source['metadata']['modified'] != ''){ ctx._source['metadata']['modifiedTimestamp'] = ctx._source['metadata']['modified'].toLong() * 1000}"
+                    }
+                ]
+            },
+            "taxon": {
+                "properties": {
+                    "acceptedNameUsage": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "acceptedNameUsageID": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "family": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "fbid": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "genus": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "higherClassification": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "infraspecificEpithet": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "properties": {
+                            "bibliographicCitation": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "contact": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "contributor": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "long"
+                            },
+                            "createdTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "creator": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "id": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "modified": {
+                                "type": "long"
+                            },
+                            "modifiedTimestamp": {
+                                "format": "dateOptionalTime",
+                                "store": true,
+                                "type": "date"
+                            },
+                            "source": {
+                                "analyzer": "general_analyzer",
+                                "fields": {
+                                    "untouched": {
+                                        "index": "not_analyzed",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
+                            "type": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            },
+                            "valid": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "phylum": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "rev": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "scientificName": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "scientificNameAuthorship": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "scientificNameWithoutAuthorship": {
+                        "analyzer": "general_analyzer",
+                        "fields": {
+                            "untouched": {
+                                "index": "not_analyzed",
+                                "type": "string"
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "specificEpithet": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxonID": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxonRank": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "taxonomicStatus": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    }
+                },
+                "transform": [
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('created') && ctx._source['metadata']['created'] != '') { ctx._source['metadata']['createdTimestamp'] = ctx._source['metadata']['created'].toLong() * 1000}"
+                    },
+                    {
+                        "lang": "groovy",
+                        "script": "if (ctx._source.containsKey('metadata') && ctx._source['metadata'].containsKey('modified') && ctx._source['metadata']['modified'] != ''){ ctx._source['metadata']['modifiedTimestamp'] = ctx._source['metadata']['modified'].toLong() * 1000}"
+                    }
+                ]
+            }
+        },
+        "settings": {
+            "index": {
+                "analysis": {
+                    "analyzer": {
+                        "general_analyzer": {
+                            "filter": [
+                                "standard",
+                                "lowercase",
+                                "asciifolding",
+                                "trim"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "semicomma_analyzer": {
+                            "filter": [
+                                "standard",
+                                "lowercase",
+                                "asciifolding",
+                                "trim"
+                            ],
+                            "tokenizer": "semicomma",
+                            "type": "custom"
+                        }
+                    },
+                    "tokenizer": {
+                        "semicomma": {
+                            "pattern": "(;)",
+                            "type": "pattern"
+                        }
+                    }
+                },
+                "mapping": {
+                    "ignore_malformed": "true"
+                }
+            }
+        },
+        "template": "*"
+    }
+}

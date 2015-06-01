@@ -7,11 +7,13 @@ RUN apt-get update && apt-get install adduser && \
     dpkg -i /root/elasticsearch-1.4.4.deb && rm /root/elasticsearch-1.4.4.deb && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /usr/share/elasticsearch/config && cp /etc/elasticsearch/* /usr/share/elasticsearch/config
+RUN mkdir /usr/share/elasticsearch/config && cp /etc/elasticsearch/* /usr/share/elasticsearch/config && mkdir /usr/share/elasticsearch/config/templates
 
 WORKDIR /usr/share/elasticsearch
 
 VOLUME ["/usr/share/elasticsearch/data"]
+
+COPY template_1.json /usr/share/elasticsearch/config/templates/
 
 EXPOSE 9200
 EXPOSE 9300
