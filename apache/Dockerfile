@@ -24,8 +24,6 @@ ENV PHP_ENV production
 ADD default.conf /etc/apache2/sites-available/default
 RUN rm /var/www/* -Rf
 
-VOLUME ["/var/www"]
-
 EXPOSE 80
 
 CMD ["/usr/sbin/apache2","-D","FOREGROUND"]
