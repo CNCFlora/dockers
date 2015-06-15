@@ -8,20 +8,25 @@
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
-                                "type": "string"
+                                "type": "string",
+                                "store": true
                             }
                         },
-                        "type": "string"
+                        "type": "string",
+                        "store": true
                     },
                     "category": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "criteria": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "dateOfAssessment": {
+                        "store": true,
                         "type": "long"
                     },
                     "dateOfAssessmentTimestamp": {
@@ -34,23 +39,28 @@
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
+                        "store": true,
                         "type": "string"
                     },
                     "id": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "information": {
                         "properties": {
                             "currentPopulationTrend": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "dateLastSeen": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "numberOfLocations": {
@@ -58,26 +68,33 @@
                             },
                             "numberOfMatureIndividuals": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "populationDeclineFuture": {
+                                "store": true,
                                 "type": "long"
                             },
                             "populationDeclinePast": {
+                                "store": true,
                                 "type": "long"
                             },
                             "possiblyExtinct": {
+                                "store": true,
                                 "type": "boolean"
                             },
                             "severelyFragmented": {
+                                "store": true,
                                 "type": "string",
                                 "index": "not_analyzed"
                             },
                             "timePeriodOfFutureDecline": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             },
                             "timePeriodOfPastDecline": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             }
@@ -90,12 +107,15 @@
                                 "fields": {
                                     "untouched": {
                                         "analyzer": "semicomma_analyzer",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
+                                "store": true,
                                 "type": "string"
                             },
                             "created": {
+                                "store": true,
                                 "type": "long"
                             },
                             "creator": {
@@ -103,9 +123,11 @@
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
+                                "store": true,
                                 "type": "string"
                             },
                             "createdTimestamp": {
@@ -115,17 +137,21 @@
                             },
                             "description": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "identifier": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "language": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "modified": {
+                                "store": true,
                                 "type": "long"
                             },
                             "modifiedTimestamp": {
@@ -138,13 +164,16 @@
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
+                                "store": true,
                                 "type": "string"
                             },
                             "status": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "title": {
@@ -152,40 +181,49 @@
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
+                                "store": true,
                                 "type": "string"
                             },
                             "type": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "valid": {
+                                "store": true,
                                 "type": "boolean"
                             }
                         }
                     },
                     "notes": {
                         "type": "string",
+                        "store": true,
                         "analyzer": "general_analyzer"
                     },
                     "profile": {
                         "type": "string",
+                        "store": true,
                         "index": "not_analyzed"
                     },
                     "rationale": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "type": "string"
                     },
                     "reasonsForChange": {
                         "properties": {
                             "reason": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "resume": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             }
                         }
@@ -193,13 +231,16 @@
                     "reasonsForReAssessment": {
                         "properties": {
                             "change": {
+                                "store": true,
                                 "type": "boolean"
                             },
                             "reason": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             },
                             "resume": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             }
@@ -207,30 +248,36 @@
                     },
                     "references": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "type": "string"
                     },
                     "rev": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "review": {
                         "properties": {
                             "comment": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "rationale": {
                                 "type": "string",
+                                "store": true,
                                 "analyzer": "general_analyzer"
                             },
                             "status": {
                                 "type": "string",
+                                "store": true,
                                 "index": "not_analyzed"
                             }
                         }
                     },
                     "status": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "taxon": {
@@ -239,20 +286,25 @@
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
                                 },
+                                "store": true,
                                 "type": "string"
                             },
                             "lsid": {
+                                "store": true,
                                 "type": "string",
                                 "index": "not_analyzed"
                             },
                             "scientificName": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -260,9 +312,11 @@
                                 "type": "string"
                             },
                             "scientificNameAuthorship": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -270,9 +324,11 @@
                                 "type": "string"
                             },
                             "scientificNameWithoutAuthorship": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -300,228 +356,278 @@
             "occurrence": {
                 "properties": {
                     "acceptedNameUsage": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "acceptedNameUsageID": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "basisOfRecord": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "bibliographicCitation": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "catalogNumber": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "class": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "collectionCode": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "comments": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "coordinateUncertaintyInMeters": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "country": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "county": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "dateIdentified": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "dateLastModified": {
+                        "store": true,
                         "format": "dateOptionalTime",
                         "type": "date"
                     },
                     "day": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "dayIdentified": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "decimalLatitude": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "decimalLatitude2": {
+                        "store": true,
                         "type": "double"
                     },
                     "decimalLongitude": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "family": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "fieldNumber": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "genus": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "georeferencePrecision": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "georeferenceProtocol": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "georeferenceRemarks": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "georeferenceVerificationStatus": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "georeferencedBy": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "georeferencedDate": {
+                        "store": true,
                         "format": "yyyy/MM/dd HH:mm:ss||yyyy/MM/dd",
                         "type": "date"
                     },
                     "id": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "identificationDate": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "identificationQualifier": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "identifiedBy": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "individualCount": {
+                        "store": true,
                         "type": "string"
                     },
                     "infraspecificEpithet": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "institutionCode": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "kingdom": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "latlon": {
+                        "store": true,
                         "lat_lon": true,
                         "normalize": false,
                         "store": true,
                         "type": "geo_point"
                     },
                     "locality": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "type": "string"
                     },
@@ -529,9 +635,11 @@
                         "properties": {
                             "contact": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "fields": {
                                     "untouched": {
                                         "analyzer": "semicomma_analyzer",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -539,15 +647,18 @@
                             },
                             "contributor": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "fields": {
                                     "untouched": {
                                         "analyzer": "semicomma_analyzer",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "created": {
+                                "store": true,
                                 "type": "long"
                             },
                             "createdTimestamp": {
@@ -556,20 +667,24 @@
                                 "type": "date"
                             },
                             "creator": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "identifier": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "modified": {
+                                "store": true,
                                 "type": "long"
                             },
                             "modifiedTimestamp": {
@@ -578,82 +693,100 @@
                                 "type": "date"
                             },
                             "type": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
                         }
                     },
                     "modified": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "month": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "monthIdentified": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "municipality": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "occurrenceID": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "occurrenceRemarks": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "type": "string"
                     },
                     "occurrenceStatus": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "phylum": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "recordNumber": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "recordedBy": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "remarks": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "type": "string"
                     },
                     "rev": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "scientificName": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
@@ -661,34 +794,42 @@
                     },
                     "scientificNameAuthorship": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "sex": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "specificEpithet": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "stateProvince": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "taxonID": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "taxonOrder": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
@@ -696,9 +837,11 @@
                         "type": "string"
                     },
                     "typeStatus": {
+                        "store": true,
                         "analyzer": "general_analyzer",
                         "fields": {
                             "untouched": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
@@ -708,84 +851,103 @@
                     "validation": {
                         "properties": {
                             "by": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "cultivated": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "duplicated": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "georeference": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "native": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "presence": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "remarks": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "status": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "taxonomy": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
                         }
                     },
                     "verbatimLatitude": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "verbatimLongitude": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "verbatimValidation": {
+                        "store": true,
                         "properties": {
                             "by": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "remarks": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "status": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
                         }
                     },
                     "year": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "yearIdentified": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     }
@@ -811,18 +973,22 @@
                         "properties": {
                             "action": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "type": "string"
                             },
                             "details": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "type": "string"
                             },
                             "references": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "type": "string"
                             },
                             "situation": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         }
@@ -832,39 +998,49 @@
                             "altitude": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
                                 }
                             },
                             "aoo": {
+                                "store": true,
                                 "type": "double"
                             },
                             "brasilianEndemic": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "eoo": {
+                                "store": true,
                                 "type": "double"
                             },
                             "fragmented": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "resume": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             }
@@ -873,54 +1049,67 @@
                     "ecology": {
                         "properties": {
                             "biomas": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "clonal": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "fenology": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "fitofisionomies": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "habitats": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "lifeForm": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "longevity": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "luminosity": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "resprout": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "resume": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "substratum": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "vegetation": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             }
@@ -929,29 +1118,35 @@
                     "economicValue": {
                         "properties": {
                             "details": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "potentialEconomicValue": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             }
                         }
                     },
                     "id": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "metadata": {
                         "properties": {
                             "contact": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "analyzer": "semicomma_analyzer",
                                         "type": "string"
                                     }
@@ -959,9 +1154,11 @@
                                 "type": "string"
                             },
                             "contributor": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "analyzer": "semicomma_analyzer",
                                         "type": "string"
                                     }
@@ -969,6 +1166,7 @@
                                 "type": "string"
                             },
                             "created": {
+                                "store": true,
                                 "type": "long"
                             },
                             "createdTimestamp": {
@@ -977,28 +1175,34 @@
                                 "type": "date"
                             },
                             "creator": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "description": {
+                                "store": true,
                                 "type": "string",
                                 "analyzer": "general_analyzer"
                             },
                             "identifier": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "language": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "modified": {
+                                "store": true,
                                 "type": "long"
                             },
                             "modifiedTimestamp": {
@@ -1007,24 +1211,29 @@
                                 "type": "date"
                             },
                             "source": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "status": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "title": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -1032,9 +1241,11 @@
                             },
                             "type": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "valid": {
+                                "store": true,
                                 "type": "boolean"
                             }
                         }
@@ -1045,6 +1256,7 @@
                                 "properties": {
                                     "extremeFluctuation": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 }
@@ -1052,19 +1264,24 @@
                             "generationTiming": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "justification": {
+                                        "store": true,
                                         "analyzer": "general_analyzer",
                                         "type": "string"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1073,15 +1290,19 @@
                             "numberOfIndividualsInBiggestSubpopulation": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1090,15 +1311,19 @@
                             "numberOfSubpopulations": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1107,40 +1332,50 @@
                             "populationalReduction": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
                                 }
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "resume": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "size": {
                                 "properties": {
                                     "absolute": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "maximum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "minimum": {
+                                        "store": true,
                                         "type": "double"
                                     },
                                     "type": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1151,69 +1386,84 @@
                     "reproduction": {
                         "properties": {
                             "dispersionSyndrome": {
-                                "index": "not_analyzed",
+                                "analyzer": "general_analyzer",
+                                "store": true,
                                 "type": "string"
                             },
                             "dispersorInformation": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "fenology": {
                                 "properties": {
                                     "end": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     },
                                     "fenology": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     },
                                     "start": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
                                 }
                             },
                             "pollinationSyndrome": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "pollinatorInformation": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "resume": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "sexualSystem": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "strategy": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "system": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
                         }
                     },
                     "rev": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "taxon": {
                         "properties": {
                             "family": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1221,34 +1471,41 @@
                                 "type": "string"
                             },
                             "lsid": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "scientificName": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "scientificNameAuthorship": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "scientificNameWithoutAuthorship": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -1259,10 +1516,12 @@
                     "taxonomicNotes": {
                         "properties": {
                             "notes": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             }
@@ -1271,40 +1530,50 @@
                     "threats": {
                         "properties": {
                             "decline": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "details": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "ended": {
+                                "store": true,
                                 "type": "boolean"
                             },
                             "incidence": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "reversible": {
+                                "store": true,
                                 "type": "boolean"
                             },
                             "severity": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "stress": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "threat": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "timing": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
@@ -1313,22 +1582,27 @@
                     "uses": {
                         "properties": {
                             "details": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "provenance": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "references": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "resource": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             },
                             "use": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             }
@@ -1337,19 +1611,23 @@
                     "validations": {
                         "properties": {
                             "comment": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "field": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "type": "string"
                             },
                             "metadata": {
                                 "properties": {
                                     "contact": {
+                                        "store": true,
                                         "analyzer": "general_analyzer",
                                         "fields": {
                                             "untouched": {
+                                                "store": true,
                                                 "index": "not_analyzed",
                                                 "type": "string"
                                             }
@@ -1357,6 +1635,7 @@
                                         "type": "string"
                                     },
                                     "created": {
+                                        "store": true,
                                         "type": "long"
                                     },
                                     "createdTimestamp": {
@@ -1366,15 +1645,18 @@
                                     },
                                     "creator": {
                                         "analyzer": "general_analyzer",
+                                        "store": true,
                                         "fields": {
                                             "untouched": {
                                                 "index": "not_analyzed",
+                                                "store": true,
                                                 "type": "string"
                                             }
                                         },
                                         "type": "string"
                                     },
                                     "modified": {
+                                        "store": true,
                                         "type": "long"
                                     },
                                     "modifiedTimestamp": {
@@ -1383,6 +1665,7 @@
                                         "type": "date"
                                     },
                                     "status": {
+                                        "store": true,
                                         "index": "not_analyzed",
                                         "type": "string"
                                     }
@@ -1406,8 +1689,10 @@
                 "properties": {
                     "acceptedNameUsage": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
@@ -1416,13 +1701,16 @@
                     },
                     "acceptedNameUsageID": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "family": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
@@ -1430,26 +1718,32 @@
                     },
                     "fbid": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "genus": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
                         "type": "string"
                     },
                     "higherClassification": {
+                        "store": true,
                         "type": "string"
                     },
                     "id": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
                     "infraspecificEpithet": {
+                        "store": true,
                         "index": "not_analyzed",
                         "type": "string"
                     },
@@ -1457,19 +1751,23 @@
                         "properties": {
                             "bibliographicCitation": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "contact": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "analyzer": "semicomma_analyzer",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -1477,15 +1775,18 @@
                             },
                             "contributor": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "fields": {
                                     "untouched": {
                                         "analyzer": "semicomma_analyzer",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
                                 "type": "string"
                             },
                             "created": {
+                                "store": true,
                                 "type": "long"
                             },
                             "createdTimestamp": {
@@ -1494,10 +1795,12 @@
                                 "type": "date"
                             },
                             "creator": {
+                                "store": true,
                                 "analyzer": "general_analyzer",
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -1505,13 +1808,16 @@
                             },
                             "id": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "identifier": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "modified": {
+                                "store": true,
                                 "type": "long"
                             },
                             "modifiedTimestamp": {
@@ -1521,9 +1827,11 @@
                             },
                             "source": {
                                 "analyzer": "general_analyzer",
+                                "store": true,
                                 "fields": {
                                     "untouched": {
                                         "index": "not_analyzed",
+                                        "store": true,
                                         "type": "string"
                                     }
                                 },
@@ -1531,17 +1839,21 @@
                             },
                             "type": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             },
                             "valid": {
+                                "store": true,
                                 "type": "boolean"
                             }
                         }
                     },
                     "phylum": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
+                                "store": true,
                                 "index": "not_analyzed",
                                 "type": "string"
                             }
@@ -1550,13 +1862,16 @@
                     },
                     "rev": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "scientificName": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
@@ -1564,9 +1879,11 @@
                     },
                     "scientificNameAuthorship": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
@@ -1574,9 +1891,11 @@
                     },
                     "scientificNameWithoutAuthorship": {
                         "analyzer": "general_analyzer",
+                        "store": true,
                         "fields": {
                             "untouched": {
                                 "index": "not_analyzed",
+                                "store": true,
                                 "type": "string"
                             }
                         },
@@ -1584,18 +1903,22 @@
                     },
                     "specificEpithet": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "taxonID": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "taxonRank": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     },
                     "taxonomicStatus": {
                         "index": "not_analyzed",
+                        "store": true,
                         "type": "string"
                     }
                 },
