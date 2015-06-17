@@ -1,0 +1,98 @@
+Monitis Smart Agent
+
+Description
+
+Monitis Smart Agent for Linux allows monitoring of processes, CPU, memory and Hard drive utilization on Linux server. It also can use any customer server to remotely monitor other customer web sites, including Intranet sites. You can find more details by following this link  http://blog.monitis.com/index.php/category/help/page/2/.
+
+System requirements
+ 
+OS    Linux x64
+RAM   2-3MB
+SIZE  35KB ( tar gz ) 
+
+Shared library dependencies
+libssl.so.0.9.7   libssl must be installed
+libc.so.6         can be linked to libc.so.2
+
+Note: In case your libssl.so.0.9.7 file is located in other directory than /usr/lib or have a different name you should create a symbolic link, e.g.
+
+ln -s /lib/libssl.so.0.9.7 /usr/lib/libssl.so.0.9.7
+
+Monitis Smart Agent should be run as a root user and should be allowed to establish outgoing HTTPS (443) connection for receiving response data
+
+Monitis Smart Agent files and directories have the following structure
+ 
+monitis/
+monitis/bin/
+monitis/bin/monitis
+monitis/bin/updater
+monitis/doc/README
+monitis/doc/LICENSE
+monitis/logs/monitis.log
+monitis/logs/monitis.pid
+monitis/monitis.sh 
+
+Administrator of the server can use configuration wizard to create a configuration file with all parameters of Monitis Smart Agent.
+
+To configure Monitis Smart Agent simply run "monitis.sh" with "conf" argument.
+
+After inputting the needed info the wizard will create the configuration file /etc/monitis.conf.
+
+Additionally wizard creates "logs" directory in Monitis Smart Agent's home folder for monitis.log and monitis.pid files.
+
+Example:
+./monitis.sh conf
+ 
+
+                MONITIS SMART AGENT
+
+ 
+Starting Configuration...
+
+Enter the path for the Monitis Smart Agent's home directory or
+press Enter if it is the current directory
+
+: 
+
+/usr/local/monitis   OK
+
+
+Insert your registered e-mail address(the one you're using during login in monitis)
+
+: 
+
+ 
+
+Insert any name for Monitis Smart Agent agent
+
+: 
+
+logs directory is already created.
+
+ 
+
+Configuration is successfully completed! 
+
+ 
+
+Run monitis.sh without any arguments to see the help.
+
+./monitis.sh 
+
+ 
+
+                MONITIS SMART AGENT
+
+ 
+Usage: ./monitis.sh {conf|start|stop|restart|status}
+ 
+        conf    run configuration wizard
+        start   start Monitis Smart Agent
+        stop    stop  Monitis Smart Agent
+        restart stop if running and start 
+        status  show Monitis Smart Agent's current status
+
+
+
+NOTE: After server restart an agent will not start automatically.
+

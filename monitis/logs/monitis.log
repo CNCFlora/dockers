@@ -1,0 +1,24 @@
+[17/06/2015:15:49:57]	Process monitoring initialization done.
+[17/06/2015:15:49:57]	HTTP checker initialization done
+[17/06/2015:15:49:57]	PING checker initialization done
+[17/06/2015:15:49:57]	MEMORY checker initialization done
+[17/06/2015:15:49:57]	DISK checker initialization done
+[17/06/2015:15:49:57]	CPU checker initialization done
+[17/06/2015:15:49:57]	Load Average checker initialization done
+[17/06/2015:15:49:57]	SNMP monitor initialization failed.
+[17/06/2015:15:49:57]	MySQL checker initialization done
+[17/06/2015:15:49:57]	NDIS monitor initialization done
+[17/06/2015:15:49:57]	Main Worker thread created successfully
+[17/06/2015:15:51:37]	SIGHUP Received, Shutting down.
+[17/06/2015:15:51:48]	Process monitoring initialization done.
+[17/06/2015:15:51:48]	HTTP checker initialization done
+[17/06/2015:15:51:48]	PING checker initialization done
+[17/06/2015:15:51:48]	MEMORY checker initialization done
+[17/06/2015:15:51:48]	DISK checker initialization done
+[17/06/2015:15:51:48]	CPU checker initialization done
+[17/06/2015:15:51:48]	Load Average checker initialization done
+[17/06/2015:15:51:48]	SNMP monitor initialization failed.
+[17/06/2015:15:51:48]	MySQL checker initialization done
+[17/06/2015:15:51:48]	NDIS monitor initialization done
+[17/06/2015:15:51:48]	Main Worker thread created successfully
+[17/06/2015:15:53:59]	SIGHUP Received, Shutting down.
