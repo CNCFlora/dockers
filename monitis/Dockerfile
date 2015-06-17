@@ -10,6 +10,6 @@ RUN apt-get install -y openssl libxml2 && \
 
 ADD . /opt/monitis
 
-WORKDIR ["/opt/monitis"]
+WORKDIR /opt/monitis
 CMD ["/opt/monitis/start.sh"]
 
