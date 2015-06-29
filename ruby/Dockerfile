@@ -9,9 +9,9 @@ RUN sed -i -e 's/http.debian.net/ftp.us.debian.org/g' /etc/apt/sources.list && \
 
 ENV ENV production
 ENV RACK_ENV production
-ENV version 2.1.0
+ENV version 2.2.2
 
-RUN curl --insecure https://cache.ruby-lang.org/pub/ruby/2.1/ruby-$version.tar.gz -o /tmp/ruby-$version.tar.gz && \
+RUN curl --insecure https://cache.ruby-lang.org/pub/ruby/2.2/ruby-$version.tar.gz -o /tmp/ruby-$version.tar.gz && \
     cd /tmp && \
     tar -xzf ruby-$version.tar.gz && \
     cd ruby-$version && \
@@ -22,3 +22,5 @@ RUN curl --insecure https://cache.ruby-lang.org/pub/ruby/2.1/ruby-$version.tar.g
     rm -rf ruby-$version && \
     rm -f ruby-$version.tar.gz
 
+RUN mkdir /opt/app
+WORKDIR /opt/app
