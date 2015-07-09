@@ -16,12 +16,12 @@
                         "store": true
                     },
                     "category": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
                     "criteria": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -64,6 +64,7 @@
                                 "analyzer": "general_analyzer"
                             },
                             "numberOfLocations": {
+                                "store": true,
                                 "type": "long"
                             },
                             "numberOfMatureIndividuals": {
@@ -276,7 +277,7 @@
                         }
                     },
                     "status": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -415,7 +416,7 @@
                     },
                     "collectionCode": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "comments": {
@@ -432,7 +433,7 @@
                     },
                     "coordinateUncertaintyInMeters": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "country": {
@@ -484,10 +485,6 @@
                         "index": "not_analyzed",
                         "type": "string"
                     },
-                    "decimalLatitude2": {
-                        "store": true,
-                        "type": "double"
-                    },
                     "decimalLongitude": {
                         "store": true,
                         "index": "not_analyzed",
@@ -507,7 +504,7 @@
                     },
                     "fieldNumber": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "genus": {
@@ -536,7 +533,7 @@
                     },
                     "georeferenceProtocol": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "georeferenceRemarks": {
@@ -553,7 +550,7 @@
                     },
                     "georeferenceVerificationStatus": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "georeferencedBy": {
@@ -606,12 +603,12 @@
                     },
                     "infraspecificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "institutionCode": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "kingdom": {
@@ -811,12 +808,12 @@
                     },
                     "specificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "stateProvince": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "taxonID": {
@@ -1744,7 +1741,7 @@
                     },
                     "infraspecificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "metadata": {
@@ -1902,7 +1899,7 @@
                         "type": "string"
                     },
                     "specificEpithet": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -1912,7 +1909,7 @@
                         "type": "string"
                     },
                     "taxonRank": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -1938,6 +1935,16 @@
             "index": {
                 "analysis": {
                     "analyzer": {
+                        "category_analyzer": {
+                            "filter": [
+                                "standard",
+                                "lowercase",
+                                "asciifolding",
+                                "trim"
+                            ],
+                            "tokenizer": "keyword",
+                            "type": "custom"
+                        },
                         "general_analyzer": {
                             "filter": [
                                 "standard",
