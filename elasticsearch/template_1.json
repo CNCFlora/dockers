@@ -113,6 +113,18 @@
                     },
                     "metadata": {
                         "properties": {
+                            "contact": {
+                                "analyzer": "general_analyzer",
+                                "store": true,
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "store": true,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
                             "contributor": {
                                 "analyzer": "general_analyzer",
                                 "fields": {
