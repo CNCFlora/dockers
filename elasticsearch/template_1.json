@@ -2,18 +2,28 @@
     "template_1": {
         "mappings": {
             "assessment": {
-                "properties": {
-                    "assessor": {
-                        "analyzer": "general_analyzer",
-                        "fields": {
-                            "untouched": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
+                 "properties": {
+                     "assessor": {
+                         "analyzer": "general_analyzer",
+                         "fields": {
+                             "untouched": {
                                 "index": "not_analyzed",
                                 "type": "string",
                                 "store": true
                             }
                         },
-                        "type": "string",
-                        "store": true
+                        "store": true,
+                        "type": "string"
                     },
                     "category": {
                         "analyzer": "category_analyzer",
@@ -355,6 +365,16 @@
                 ]
             },
             "occurrence": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "acceptedNameUsage": {
                         "store": true,
@@ -965,6 +985,16 @@
                 ]
             },
             "profile": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "actions": {
                         "properties": {
@@ -1683,6 +1713,16 @@
                 ]
             },
             "taxon": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "acceptedNameUsage": {
                         "analyzer": "general_analyzer",
