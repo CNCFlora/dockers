@@ -2,26 +2,36 @@
     "template_1": {
         "mappings": {
             "assessment": {
-                "properties": {
-                    "assessor": {
-                        "analyzer": "general_analyzer",
-                        "fields": {
-                            "untouched": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
+                 "properties": {
+                     "assessor": {
+                         "analyzer": "general_analyzer",
+                         "fields": {
+                             "untouched": {
                                 "index": "not_analyzed",
                                 "type": "string",
                                 "store": true
                             }
                         },
-                        "type": "string",
-                        "store": true
+                        "store": true,
+                        "type": "string"
                     },
                     "category": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
                     "criteria": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -64,6 +74,7 @@
                                 "analyzer": "general_analyzer"
                             },
                             "numberOfLocations": {
+                                "store": true,
                                 "type": "long"
                             },
                             "numberOfMatureIndividuals": {
@@ -102,6 +113,18 @@
                     },
                     "metadata": {
                         "properties": {
+                            "contact": {
+                                "analyzer": "general_analyzer",
+                                "store": true,
+                                "fields": {
+                                    "untouched": {
+                                        "analyzer": "semicomma_analyzer",
+                                        "store": true,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "string"
+                            },
                             "contributor": {
                                 "analyzer": "general_analyzer",
                                 "fields": {
@@ -276,7 +299,7 @@
                         }
                     },
                     "status": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -354,6 +377,16 @@
                 ]
             },
             "occurrence": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "acceptedNameUsage": {
                         "store": true,
@@ -415,7 +448,7 @@
                     },
                     "collectionCode": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "comments": {
@@ -432,7 +465,7 @@
                     },
                     "coordinateUncertaintyInMeters": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "country": {
@@ -484,10 +517,6 @@
                         "index": "not_analyzed",
                         "type": "string"
                     },
-                    "decimalLatitude2": {
-                        "store": true,
-                        "type": "double"
-                    },
                     "decimalLongitude": {
                         "store": true,
                         "index": "not_analyzed",
@@ -507,7 +536,7 @@
                     },
                     "fieldNumber": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "genus": {
@@ -536,7 +565,7 @@
                     },
                     "georeferenceProtocol": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "georeferenceRemarks": {
@@ -553,7 +582,7 @@
                     },
                     "georeferenceVerificationStatus": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "georeferencedBy": {
@@ -606,12 +635,12 @@
                     },
                     "infraspecificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "institutionCode": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "kingdom": {
@@ -811,12 +840,12 @@
                     },
                     "specificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "stateProvince": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "taxonID": {
@@ -968,6 +997,16 @@
                 ]
             },
             "profile": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "actions": {
                         "properties": {
@@ -1686,6 +1725,16 @@
                 ]
             },
             "taxon": {
+                 "dynamic_templates": [
+                     {
+                         "text_indexed_template": {
+                             "match": "*",
+                             "mapping": {
+                                 "store": true
+                             }
+                         }
+                     }
+                 ],
                 "properties": {
                     "acceptedNameUsage": {
                         "analyzer": "general_analyzer",
@@ -1744,7 +1793,7 @@
                     },
                     "infraspecificEpithet": {
                         "store": true,
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "type": "string"
                     },
                     "metadata": {
@@ -1902,7 +1951,7 @@
                         "type": "string"
                     },
                     "specificEpithet": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -1912,7 +1961,7 @@
                         "type": "string"
                     },
                     "taxonRank": {
-                        "index": "not_analyzed",
+                        "analyzer": "category_analyzer",
                         "store": true,
                         "type": "string"
                     },
@@ -1938,6 +1987,16 @@
             "index": {
                 "analysis": {
                     "analyzer": {
+                        "category_analyzer": {
+                            "filter": [
+                                "standard",
+                                "lowercase",
+                                "asciifolding",
+                                "trim"
+                            ],
+                            "tokenizer": "keyword",
+                            "type": "custom"
+                        },
                         "general_analyzer": {
                             "filter": [
                                 "standard",
