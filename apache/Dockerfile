@@ -22,7 +22,7 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/apache2.pid
 ENV PHP_ENV production
 
-ADD default.conf /etc/apache2/sites-available/default
+ADD default.conf /etc/apache2/sites-available/000-default.conf
 RUN rm /var/www/* -Rf
 
 RUN ln -sf /dev/stderr /var/log/apache2/error.log
