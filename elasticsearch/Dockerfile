@@ -8,7 +8,9 @@ RUN apt-get update && apt-get install adduser && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /usr/share/elasticsearch/config && cp /etc/elasticsearch/* /usr/share/elasticsearch/config && mkdir /usr/share/elasticsearch/config/templates
-RUN echo 'script.disable_dynamic: false' >> /usr/share/elasticsearch/config/elasticsearch.yml
+RUN echo 'script.disable_dynamic: false' >> /usr/share/elasticsearch/config/elasticsearch.yml && \
+    echo 'index.query.bool.max_clause_count: 600000' >> /usr/share/elasticsearch/config/elasticsearch.yml && \
+    echo 'index.mapping.ignore_malformed: true' >> /usr/share/elasticsearch/config/elasticsearch.yml
 
 WORKDIR /usr/share/elasticsearch
 
