@@ -7,10 +7,11 @@ RUN sed -i -e 's/http.debian.net/ftp.us.debian.org/g' /etc/apt/sources.list && \
     apt-get install apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-common php5-sqlite php5-mysql php5-pgsql php5-gd curl git -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod rewrite 
+RUN a2enmod rewrite
 
 RUN sed -i -e 's/memory_limit.*/memory_limit=512M/g' /etc/php5/apache2/php.ini && \
     sed -i -e 's/upload_max_filesize.*/upload_max_filesize=128M/g' /etc/php5/apache2/php.ini && \
+    sed -i -e 's/max_execution_time.*/max_execution_time=90/g' /etc/php5/apache2/php.ini && \
     sed -i -e 's/post_max_size.*/post_max_size=128M/g' /etc/php5/apache2/php.ini && \
     sed -i -e 's/display_errors.*/display_erros=On/g' /etc/php5/apache2/php.ini
 
@@ -35,4 +36,3 @@ WORKDIR /var/www
 CMD ["/usr/sbin/apache2","-D","FOREGROUND"]
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
-
